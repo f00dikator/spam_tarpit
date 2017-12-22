@@ -1,0 +1,14 @@
+/*
+ * * This software was written by John Lampe (dmitry.chan@gmail.com)
+ * * I don't care if you use it...
+ * * Compile with
+ * * gcc spam_tarpit.c -o tarpit -lpcap -lnet -lpcre
+ * * or just run ./build from this directory
+*/
+
+
+You'll need to edit spam.h in order to make this work for you...yes, I could have made it read a conf file...but, I'm lazy and this works for me, so I'm done.
+
+
+Also, you'll have to use iptables to block access to the port.  e.g.
+	iptables -A INPUT -p tcp -i eth1 --dport 25 -j firewall
